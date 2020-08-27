@@ -25,7 +25,7 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-       
+
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
@@ -33,7 +33,6 @@
             <Label Content="Process Name" FontSize="14"/>
             <Border BorderBrush="Black" BorderThickness="2"/>
         </Grid>
-
         <Grid Grid.Row="0" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
@@ -41,7 +40,6 @@
             <Label Content="PID" FontSize="14"/>
             <Border BorderBrush="Black" BorderThickness="2"/>
         </Grid>
-        
         <Grid Grid.Row="0" Grid.Column="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
@@ -70,5 +68,60 @@
             <Label Content="Description" FontSize="14"/>
             <Border BorderBrush="Black" BorderThickness="2"/>
         </Grid>
+
+        <ListBox ItemsSource="{Binding ProcessItems}"
+                 VerticalAlignment="Top"
+                 Grid.Row="1"
+                 Grid.ColumnSpan="6"
+                 SelectionChanged="ListBox_SelectionChanged"
+                 HorizontalContentAlignment="Stretch">
+            <ListBox.DataContext>
+                <local:Viewer/>
+            </ListBox.DataContext>
+            <ListBox.Template>
+                <ControlTemplate>
+                    <DockPanel LastChildFill="True">
+                        <Grid Height="30" DockPanel.Dock="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80*"/>
+                                <ColumnDefinition Width="40*"/>
+                                <ColumnDefinition Width="80*"/>
+                                <ColumnDefinition Width="80*"/>
+                                <ColumnDefinition Width="40*"/>
+                                <ColumnDefinition Width="60*"/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                        <ScrollViewer>
+                            <ItemsPresenter/>
+                        </ScrollViewer>
+                    </DockPanel>
+                </ControlTemplate>
+            </ListBox.Template>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80*"/>
+                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="80*"/>
+                            <ColumnDefinition Width="80*"/>
+                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="60*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding ProcessName}" Grid.Column="0"/>
+                        <TextBlock Text="{Binding Id}" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Grid Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Close" Click="Button_Click"/>
+            <Border BorderBrush="MediumVioletRed" BorderThickness="2"/>
+        </Grid>
+        
     </Grid>
 </Window>
