@@ -27,12 +27,19 @@ namespace DesktopManager
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var list = (ListBox)sender;
 
+            if (list.SelectedItems.Count > 0)
+            {
+                var viewer = (Viewer)DataContext;
+                viewer.SelectProcess = ((ProcessItem)list.SelectedItems[0]).Process;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            var viewer = (Viewer)DataContext;
+            viewer.KillProcess();
         }
     }
 }
