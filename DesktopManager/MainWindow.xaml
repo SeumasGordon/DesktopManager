@@ -25,41 +25,50 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
+       
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="Process Name" FontSize="20"/>
+            <Label Content="Process Name" FontSize="14"/>
+            <Border BorderBrush="Black" BorderThickness="2"/>
         </Grid>
+
         <Grid Grid.Row="0" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="PID" FontSize="20"/>
+            <Label Content="PID" FontSize="14"/>
+            <Border BorderBrush="Black" BorderThickness="2"/>
         </Grid>
+        
         <Grid Grid.Row="0" Grid.Column="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Process Time" FontSize="20"/>
+            <Label Content="Process Time" FontSize="14"/>
+            <Border BorderBrush="Black" BorderThickness="2"/>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Memory Usage" FontSize="20"/>
+            <Label Content="Memory Usage" FontSize="14"/>
+            <Border BorderBrush="Black" BorderThickness="2"/>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="User" FontSize="20"/>
+            <Label Content="User" FontSize="14"/>
+            <Border BorderBrush="Black" BorderThickness="2"/>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Description" FontSize="20"/>
+            <Label Content="Description" FontSize="14"/>
+            <Border BorderBrush="Black" BorderThickness="2"/>
         </Grid>
     </Grid>
 </Window>
