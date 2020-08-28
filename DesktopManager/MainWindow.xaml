@@ -112,6 +112,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{Binding ProcessName}" Grid.Column="0"/>
                         <TextBlock Text="{Binding Id}" Grid.Column="1"/>
+                        <TextBlock Text="{Binding Time}" Grid.Column="2"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
