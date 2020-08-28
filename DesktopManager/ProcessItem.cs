@@ -25,7 +25,7 @@ namespace DesktopManager
             string returns = "00:00:00:00.00";
             try
             {
-                returns = DateTime.Now.Subtract(p.StartTime).ToString(@"dd\.hh\:mm\:ss\.ff");//"hh:mm:ss.ff" format is not working.
+                returns = DateTime.Now.Subtract(p.StartTime).ToString(@"dd\.hh\:mm\:ss\.ff");
             }
             catch (Exception)
             {

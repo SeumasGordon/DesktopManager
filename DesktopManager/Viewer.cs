@@ -45,6 +45,12 @@ namespace DesktopManager
                     ProcessItems.Add(new ProcessItem(p));
                 }
             }
+
+            foreach (var id in currentIds)
+            {
+                var process = ProcessItems.First(p => p.Id == id);
+                ProcessItems.Remove(process);
+            }
         }
 
         public void KillProcess()
