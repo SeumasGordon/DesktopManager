@@ -18,17 +18,18 @@ namespace DesktopManager{
             Process = process;
         }
 
-        public static string GetRunningTime(Process p)
-        {
-            //string returns = "00:00:00:00.00";//DD:HH;MM;SS.ff
-            //try{
-            //    returns = DateTime.Now.Subtract(p.StartTime).ToString(@"dd\.hh\:mm\:ss\.ff");//Time now - StartTime. ToString With format
-            //}catch (Exception){}
-            //return returns;//returns the string.
-            return "Not finished";
+        public static string GetRunningTime(Process p){
+            string returns = "Run As Aministrator";//DD:HH;MM;SS.ff
+            AdminCheck AC = new AdminCheck();
+            if (AC.IsAdmin) { 
+                if (p.Id != 0)
+                    returns = DateTime.Now.Subtract(p.StartTime).ToString(@"dd\.hh\:mm\:ss\.ff");//Time now - StartTime. ToString With format
+                else
+                    returns = "00:00:00:00.00";
+            }
+            return returns;//returns the string.
         }
-        public string MemoryConvert(Process p)
-        {
+        public string MemoryConvert(Process p){
             if (p.PrivateMemorySize64 < 1024){
                 return p.PrivateMemorySize64 + " Bytes";
             }
