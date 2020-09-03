@@ -13,31 +13,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DesktopManager
-{
+namespace DesktopManager{
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
+    public partial class MainWindow : Window{
+        public MainWindow(){
             InitializeComponent();
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e){
             var list = (ListBox)sender;
 
-            if (list.SelectedItems.Count > 0)
-            {
+            if (list.SelectedItems.Count > 0){
                 var viewer = (Viewer)DataContext;
                 viewer.SelectProcess = ((ProcessItem)list.SelectedItems[0]).Process;
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        private void Button_Click(object sender, RoutedEventArgs e){
             var viewer = (Viewer)DataContext;
             viewer.KillProcess();
         }
