@@ -38,8 +38,10 @@ namespace DesktopManager{
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Settings settings = new Settings();
-            settings.Show();
+            PlaceHolderWindow PHW = new PlaceHolderWindow();
+            PHW.Show();
+            //Settings settings = new Settings();
+            //settings.Show();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
