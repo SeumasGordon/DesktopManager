@@ -35,5 +35,11 @@ namespace DesktopManager{
             var viewer = (Viewer)DataContext;
             viewer.KillProcess();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show();
+        }
     }
 }

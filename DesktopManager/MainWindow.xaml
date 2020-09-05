@@ -24,7 +24,6 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="340*"/>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
 
@@ -83,15 +82,14 @@
             <ListBox.Template>
                 <ControlTemplate>
                     <DockPanel LastChildFill="True">
-                        <Grid Height="30" DockPanel.Dock="Top">
+                        <Grid Height="20" DockPanel.Dock="Top">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="80*"/>
-                                <ColumnDefinition Width="40*"/>
-                                <ColumnDefinition Width="80*"/>
-                                <ColumnDefinition Width="80*"/>
-                                <ColumnDefinition Width="40*"/>
-                                <ColumnDefinition Width="60*"/>
+                                <ColumnDefinition Width="75"/>
+                                <ColumnDefinition Width="75"/>
+                                <ColumnDefinition Width="75"/>
+                                <ColumnDefinition />
                             </Grid.ColumnDefinitions>
+                            <Button Content="Settings" Grid.Column="0" Click="Button_Click_1"/>
                         </Grid>
                         <ScrollViewer>
                             <ItemsPresenter/>
@@ -104,11 +102,11 @@
                     <Grid Margin="0,1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="80*"/>
-                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="41*"/>
+                            <ColumnDefinition Width="81*"/>
                             <ColumnDefinition Width="80*"/>
-                            <ColumnDefinition Width="80*"/>
                             <ColumnDefinition Width="40*"/>
-                            <ColumnDefinition Width="60*"/>
+                            <ColumnDefinition Width="55*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{Binding ProcessName}" Grid.Column="0"/>
                         <TextBlock Text="{Binding Id}" Grid.Column="1"/>

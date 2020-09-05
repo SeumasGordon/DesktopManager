@@ -34,11 +34,13 @@ namespace DesktopManager{
                 return p.PrivateMemorySize64 + " Bytes";
             }
             else if (p.PrivateMemorySize64 < 1048576){
-                long KB = p.PrivateMemorySize64 / 1024;
+                double KB = p.PrivateMemorySize64 / 1024.0;
+                KB = Math.Round(KB, 2);
                 return KB + " KB";
             }
             else{
-                long MB = p.PrivateMemorySize64 / 1048576;
+                double MB = p.PrivateMemorySize64 / 1048576.0;
+                MB = Math.Round(MB, 2);
                 return MB + " MB";
             }
         }
