@@ -89,7 +89,9 @@
                                 <ColumnDefinition Width="75"/>
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
-                            <Button Content="Settings" Grid.Column="0" Click="Button_Click_1"/>
+                            <Button Content="View" Grid.Column="0" Click="Button_Click_2" Background="White"/>
+                            <Button Content="Settings" Grid.Column="1" Click="Button_Click_1" Background="White"/>
+                            <Button Content="Help" Grid.Column="2" Click="Button_Click_3" Background="White"/>
                         </Grid>
                         <ScrollViewer>
                             <ItemsPresenter/>
