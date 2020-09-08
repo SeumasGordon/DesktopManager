@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopManager"
         mc:Ignorable="d"
-        Title="Settings" Height="450" Width="800">
+        Title="Process Manager - Settings" Height="768" Width="1366">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid Height="20" DockPanel.Dock="Top" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Content="Home" Grid.Column="0" Click="Button_Click_2" Background="White"/>
+            <Button Content="View" Grid.Column="1" Click="Button_Click_1" Background="White"/>
+            <Button Content="Settings" Grid.Column="2" Background="White" IsEnabled="False"/>
+            <Button Content="Help" Grid.Column="3" Click="Button_Click" Background="White"/>
+        </Grid>
     </Grid>
 </Window>
