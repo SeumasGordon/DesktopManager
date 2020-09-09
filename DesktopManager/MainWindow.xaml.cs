@@ -36,21 +36,21 @@ namespace DesktopManager{
             viewer.KillProcess();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)//settings
         {
             Settings settings = new Settings();
             settings.Show();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e)//view
         {
-            PlaceHolderWindow PHW = new PlaceHolderWindow();
+            PlaceHolderWindow PHW = new PlaceHolderWindow();//Place holder window
             PHW.Show();
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Button_Click_3(object sender, RoutedEventArgs e)//help
         {
-            PlaceHolderWindow PHW = new PlaceHolderWindow();
+            PlaceHolderWindow PHW = new PlaceHolderWindow();//Place Holder Window
             PHW.Show();
         }
     }

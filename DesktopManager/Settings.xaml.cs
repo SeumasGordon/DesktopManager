@@ -24,19 +24,28 @@ namespace DesktopManager
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)//Help
         {
-
+            PlaceHolderWindow PHW = new PlaceHolderWindow();//Place Holder Window
+            PHW.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)//View
         {
-
+            PlaceHolderWindow PHW = new PlaceHolderWindow();//Place Holder Window
+            PHW.Show();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e)//Exit
         {
+            this.Close();
+        }
 
+        private void Button_Click_3(object sender, RoutedEventArgs e)//Save
+        {
+            //Do checks if there was a change
+            //if changed change values, and change IsSelected on combobox.
+            this.Close();
         }
     }
 }

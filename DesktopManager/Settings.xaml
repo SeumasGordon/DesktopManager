@@ -8,10 +8,11 @@
         Title="Process Manager - Settings" Height="768" Width="1366">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="80"/>
             <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -25,7 +26,7 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-        <Grid Height="20" DockPanel.Dock="Top" Grid.ColumnSpan="3">
+        <Grid Height="20" DockPanel.Dock="Top" Grid.ColumnSpan="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75"/>
                 <ColumnDefinition Width="75"/>
@@ -33,10 +34,44 @@
                 <ColumnDefinition Width="75"/>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Button Content="Home" Grid.Column="0" Click="Button_Click_2" Background="White"/>
+            <Button Content="Exit" Grid.Column="0" Click="Button_Click_2" Background="White"/>
             <Button Content="View" Grid.Column="1" Click="Button_Click_1" Background="White"/>
             <Button Content="Settings" Grid.Column="2" Background="White" IsEnabled="False"/>
             <Button Content="Help" Grid.Column="3" Click="Button_Click" Background="White"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="View" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <TextBlock Text="Memory Size:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+        
+        <Grid Grid.Row="2" Grid.Column="2">
+            <ComboBox Height="22">
+                <ComboBoxItem Content="Auto" IsSelected="True"/>
+                <ComboBoxItem Content="MegaBytes"/>
+                <ComboBoxItem Content="KiloBytes"/>
+                <ComboBoxItem Content="Bytes"/>
+            </ComboBox>
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.Column="1">
+            <TextBlock Text="Refresh Time:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.Column="2">
+            <ComboBox Height="22">
+                <ComboBoxItem Content=".5"/>
+                <ComboBoxItem Content="1"/>
+                <ComboBoxItem Content="2"/>
+                <ComboBoxItem Content="5" IsSelected="True"/>
+                <ComboBoxItem Content="10"/>
+            </ComboBox>
+        </Grid>
+
+        <Grid Grid.Row="5" Grid.Column="4">
+            <Button Content="Save" Height="25" Width="80" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_Click_3"/>
         </Grid>
     </Grid>
 </Window>
