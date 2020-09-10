@@ -30,15 +30,37 @@ namespace DesktopManager{
             return returns;//returns the string.
         }
         public string MemoryConvert(Process p){
-            if (p.PrivateMemorySize64 < 1024){
+            if (SettingsOptions.boolMemoryViewAuto)
+            {
+                if (p.PrivateMemorySize64 < 1024)
+                {
+                    return p.PrivateMemorySize64 + " Bytes";
+                }
+                else if (p.PrivateMemorySize64 < 1048576)
+                {
+                    double KB = p.PrivateMemorySize64 / 1024.0;
+                    KB = Math.Round(KB, 2);
+                    return KB + " KB";
+                }
+                else
+                {
+                    double MB = p.PrivateMemorySize64 / 1048576.0;
+                    MB = Math.Round(MB, 2);
+                    return MB + " MB";
+                }
+            }
+            else if (SettingsOptions.boolMemoryViewByte)
+            {
                 return p.PrivateMemorySize64 + " Bytes";
             }
-            else if (p.PrivateMemorySize64 < 1048576){
+            else if (SettingsOptions.boolMemoryViewKilo)
+            {
                 double KB = p.PrivateMemorySize64 / 1024.0;
                 KB = Math.Round(KB, 2);
                 return KB + " KB";
             }
-            else{
+            else
+            {
                 double MB = p.PrivateMemorySize64 / 1048576.0;
                 MB = Math.Round(MB, 2);
                 return MB + " MB";

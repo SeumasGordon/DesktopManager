@@ -13,7 +13,7 @@ using DesktopManager.Annotations;
 namespace DesktopManager{
     class Viewer : INotifyPropertyChanged{
         public Viewer(){
-            var ticker = new DispatcherTimer { Interval = TimeSpan.FromSeconds(5) };
+            var ticker = new DispatcherTimer { Interval = TimeSpan.FromSeconds(SettingsOptions.RefreshTime) };
             ticker.Tick += UpdateProcess;
             ticker.Start();
         }

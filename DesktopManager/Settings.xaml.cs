@@ -48,29 +48,40 @@ namespace DesktopManager
             switch (MemoryViewSizeCombobox.SelectedIndex)
             {
                 case 0://Auto
+                    SettingsOptions.setMemoryView(0);
                     break;
                 case 1://MB
+                    SettingsOptions.setMemoryView(1);
                     break;
                 case 2://KB
+                    SettingsOptions.setMemoryView(2);
                     break;
                 case 3://Byte
+                    SettingsOptions.setMemoryView(3);
                     break;
                 default://NA
+                    SettingsOptions.setMemoryView(0);
                     break;
             }
             switch (RefreshViewTimeCombobox.SelectedIndex)
             {
                 case 0://.5
+                    SettingsOptions.setRefreshView(0);
                     break;
                 case 1://1
+                    SettingsOptions.setRefreshView(1);
                     break;
                 case 2://2
+                    SettingsOptions.setRefreshView(2);
                     break;
                 case 3://5
+                    SettingsOptions.setRefreshView(3);
                     break;
                 case 4://10
+                    SettingsOptions.setRefreshView(4);
                     break;
                 default://NA
+                    SettingsOptions.setRefreshView(3);
                     break;
             }
             //Do checks if there was a change
