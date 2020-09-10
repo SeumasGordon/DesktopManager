@@ -48,7 +48,7 @@
         </Grid>
         
         <Grid Grid.Row="2" Grid.Column="2">
-            <ComboBox Height="22">
+            <ComboBox Height="22" Name="MemoryViewSizeCombobox">
                 <ComboBoxItem Content="Auto" IsSelected="True"/>
                 <ComboBoxItem Content="MegaBytes"/>
                 <ComboBoxItem Content="KiloBytes"/>
@@ -61,7 +61,7 @@
         </Grid>
 
         <Grid Grid.Row="3" Grid.Column="2">
-            <ComboBox Height="22">
+            <ComboBox Height="22" Name="RefreshViewTimeCombobox">
                 <ComboBoxItem Content=".5"/>
                 <ComboBoxItem Content="1"/>
                 <ComboBoxItem Content="2"/>
