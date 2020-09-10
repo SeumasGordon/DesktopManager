@@ -16,9 +16,8 @@
             <ColumnDefinition Width="80*"/>
             <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="80*"/>
-            <ColumnDefinition Width="80*"/>
-            <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="80*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -62,13 +61,6 @@
             <Label Content="User" FontSize="14"/>
             <Border BorderBrush="Black" BorderThickness="2"/>
         </Grid>
-        <Grid Grid.Row="0" Grid.Column="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*"/>
-            </Grid.ColumnDefinitions>
-            <Label Content="Description" FontSize="14"/>
-            <Border BorderBrush="Black" BorderThickness="2"/>
-        </Grid>
 
         <ListBox ItemsSource="{Binding ProcessItems}"
                  VerticalAlignment="Top"
@@ -108,14 +100,14 @@
                             <ColumnDefinition Width="80*"/>
                             <ColumnDefinition Width="41*"/>
                             <ColumnDefinition Width="81*"/>
-                            <ColumnDefinition Width="80*"/>
-                            <ColumnDefinition Width="40*"/>
-                            <ColumnDefinition Width="55*"/>
+                            <ColumnDefinition Width="60*"/>
+                            <ColumnDefinition Width="75*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{Binding ProcessName}" Grid.Column="0"/>
                         <TextBlock Text="{Binding Id}" Grid.Column="1"/>
                         <TextBlock Text="{Binding Time}" Grid.Column="2"/>
                         <TextBlock Text="{Binding Memory}" Grid.Column="3"/>
+                        <TextBlock Text="{Binding User}" Grid.Column="4"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

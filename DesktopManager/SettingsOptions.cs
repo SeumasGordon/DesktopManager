@@ -46,11 +46,7 @@ namespace DesktopManager
             }
         }
 
-        public static bool boolRefreshViewHalf = false;
-        public static bool boolRefreshViewOne = false;
-        public static bool boolRefreshViewTwo = false;
-        public static bool boolRefreshViewFive = true;
-        public static bool boolRefreshViewTen = false;
+        
         public static double RefreshTime = 5;
 
         public static void setRefreshView(int i)
@@ -58,51 +54,21 @@ namespace DesktopManager
             switch (i)
             {
                 case 0:
-                    boolRefreshViewHalf = true;
-                    boolRefreshViewOne = false;
-                    boolRefreshViewTwo = false;
-                    boolRefreshViewFive = false;
-                    boolRefreshViewTen = false;
                     RefreshTime = 0.5;
                     break;
                 case 1:
-                    boolRefreshViewHalf = false;
-                    boolRefreshViewOne = true;
-                    boolRefreshViewTwo = false;
-                    boolRefreshViewFive = false;
-                    boolRefreshViewTen = false;
                     RefreshTime = 1;
                     break;
                 case 2:
-                    boolRefreshViewHalf = false;
-                    boolRefreshViewOne = false;
-                    boolRefreshViewTwo = true;
-                    boolRefreshViewFive = false;
-                    boolRefreshViewTen = false;
                     RefreshTime = 2;
                     break;
                 case 3:
-                    boolRefreshViewHalf = false;
-                    boolRefreshViewOne = false;
-                    boolRefreshViewTwo = false;
-                    boolRefreshViewFive = true;
-                    boolRefreshViewTen = false;
                     RefreshTime = 5;
                     break;
                 case 4:
-                    boolRefreshViewHalf = false;
-                    boolRefreshViewOne = false;
-                    boolRefreshViewTwo = false;
-                    boolRefreshViewFive = false;
-                    boolRefreshViewTen = true;
                     RefreshTime = 10;
                     break;
                 default:
-                    boolRefreshViewHalf = false;
-                    boolRefreshViewOne = false;
-                    boolRefreshViewTwo = false;
-                    boolRefreshViewFive = true;
-                    boolRefreshViewTen = false;
                     RefreshTime = 5;
                     break;
             }

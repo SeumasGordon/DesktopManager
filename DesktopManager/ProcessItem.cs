@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,7 @@ namespace DesktopManager{
         public string ProcessName => Process.ProcessName;
         public string Time => GetRunningTime(Process);
         public string Memory => MemoryConvert(Process);
+        public string User => GetProcessOwner(Id);
 
         public ProcessItem(Process process){
             Process = process;
@@ -65,6 +67,29 @@ namespace DesktopManager{
                 MB = Math.Round(MB, 2);
                 return MB + " MB";
             }
+        }
+
+        public string GetProcessOwner(int processId)
+        {
+            AdminCheck AC = new AdminCheck();
+            if (AC.IsAdmin)
+            {
+                string query = "Select * From Win32_Process Where ProcessID = " + processId;
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
+                ManagementObjectCollection processList = searcher.Get();
+
+                foreach (ManagementObject obj in processList)
+                {
+                    string[] argList = new string[] { string.Empty, string.Empty };
+                    int returnVal = Convert.ToInt32(obj.InvokeMethod("GetOwner", argList));
+                    if (returnVal == 0)
+                    {
+                        // return DOMAIN\user
+                        return argList[1] + "\\" + argList[0];
+                    }
+                }
+            }
+            return "Run As Aministrator";
         }
     }
 }
