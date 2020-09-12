@@ -71,8 +71,7 @@ namespace DesktopManager{
 
         public string GetProcessOwner(int processId)//Gets the owner of a process
         {
-            AdminCheck AC = new AdminCheck();//Creates a admin check
-            if (AC.IsAdmin)//checks if program is ran as administator
+            if (SettingsOptions.ShowUser)//checks if feature is enabled
             {
                 string query = "Select * From Win32_Process Where ProcessID = " + processId;//query for the ManagementObjectSearcher
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);//Searcher with the query
@@ -89,7 +88,7 @@ namespace DesktopManager{
                     }
                 }
             }
-            return "Run As Aministrator";
+            return "Enable in Settings";
         }
     }
 }

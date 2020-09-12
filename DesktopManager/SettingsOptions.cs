@@ -8,7 +8,7 @@ namespace DesktopManager
 {
     public static class SettingsOptions
     {
-        public static bool boolMemoryViewAuto = true;
+        public static bool boolMemoryViewAuto = true;//Memory view Bools
         public static bool boolMemoryViewMega = false;
         public static bool boolMemoryViewKilo = false;
         public static bool boolMemoryViewByte = false;
@@ -47,7 +47,7 @@ namespace DesktopManager
         }
 
         
-        public static double RefreshTime = 5;
+        public static double RefreshTime = 5;//Refresh Time Value.
 
         public static void setRefreshView(int i)
         {
@@ -71,6 +71,15 @@ namespace DesktopManager
                 default:
                     RefreshTime = 5;
                     break;
+            }
+        }
+
+        public static bool ShowUser = false;
+        public static void setShowUser(bool showuser)
+        {
+            if (ShowUser != showuser)
+            {
+                ShowUser = showuser;
             }
         }
     }

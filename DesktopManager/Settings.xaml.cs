@@ -86,6 +86,11 @@ namespace DesktopManager
                     SettingsOptions.setRefreshView(3);
                     break;
             }
+
+            if (ShowUserCheck.IsChecked == true)
+                SettingsOptions.setShowUser(true);
+            else
+                SettingsOptions.setShowUser(false);
             //Do checks if there was a change
             //if changed change values, and change IsSelected on combobox.
             MainWindow mw = new MainWindow();// main window
