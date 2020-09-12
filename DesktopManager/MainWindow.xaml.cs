@@ -22,7 +22,7 @@ namespace DesktopManager{
             InitializeComponent();
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e){
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e){//Click on a process
             var list = (ListBox)sender;
 
             if (list.SelectedItems.Count > 0){
@@ -31,7 +31,7 @@ namespace DesktopManager{
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e){
+        private void Button_Click(object sender, RoutedEventArgs e){//kill process
             var viewer = (Viewer)DataContext;
             viewer.KillProcess();
         }
@@ -40,18 +40,21 @@ namespace DesktopManager{
         {
             Settings settings = new Settings();
             settings.Show();
+            this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)//view
         {
             PlaceHolderWindow PHW = new PlaceHolderWindow();//Place holder window
             PHW.Show();
+            this.Close();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)//help
         {
-            PlaceHolderWindow PHW = new PlaceHolderWindow();//Place Holder Window
-            PHW.Show();
+            Help h = new Help();
+            h.Show();
+            this.Close();
         }
     }
 }

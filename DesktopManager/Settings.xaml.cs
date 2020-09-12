@@ -26,21 +26,23 @@ namespace DesktopManager
 
         private void Button_Click(object sender, RoutedEventArgs e)//Help
         {
-            PlaceHolderWindow PHW = new PlaceHolderWindow();//Place Holder Window
-            PHW.Show();
-            this.Close();
+            Help h = new Help();//help window
+            h.Show();
+            this.Close();//closes this window
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)//View
         {
             PlaceHolderWindow PHW = new PlaceHolderWindow();//Place Holder Window
             PHW.Show();
-            this.Close();
+            this.Close();//closes this window
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)//Exit
         {
-            this.Close();
+            MainWindow mw = new MainWindow();//creates new main window
+            mw.Show();//shows main window
+            this.Close();//closes this window
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)//Save
@@ -86,7 +88,9 @@ namespace DesktopManager
             }
             //Do checks if there was a change
             //if changed change values, and change IsSelected on combobox.
-            this.Close();
+            MainWindow mw = new MainWindow();// main window
+            mw.Show();
+            this.Close();//closes this window
         }
     }
 }

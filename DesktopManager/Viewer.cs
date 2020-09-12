@@ -43,7 +43,7 @@ namespace DesktopManager{
             }
         }
 
-        public void KillProcess(){
+        public void KillProcess(){//Kill a process
             SelectProcess.Kill();
         }
 

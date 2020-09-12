@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="PlaceHolderWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <TextBlock Text="PLACE HOLDER | NOT FINISHED | WIP" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" Background="Red"/>
+        <Button Content="CLOSE" Grid.Column="0" Grid.Row="1" Background="PaleVioletRed" Click="Button_Click"/>
     </Grid>
 </Window>

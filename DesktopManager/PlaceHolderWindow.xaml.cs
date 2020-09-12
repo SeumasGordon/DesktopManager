@@ -23,5 +23,12 @@ namespace DesktopManager
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)//CLOSE button.
+        {
+            MainWindow mw = new MainWindow();//main window
+            mw.Show();
+            this.Close();//closes this window
+        }
     }
 }
