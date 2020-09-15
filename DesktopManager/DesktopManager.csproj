@@ -63,6 +63,7 @@
     <Compile Include="MoreProcessInformation.xaml.cs">
       <DependentUpon>MoreProcessInformation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PerformanceInfoClass.cs" />
     <Compile Include="PlaceHolderWindow.xaml.cs">
       <DependentUpon>PlaceHolderWindow.xaml</DependentUpon>
     </Compile>

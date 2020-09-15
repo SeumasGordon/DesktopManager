@@ -11,23 +11,24 @@ using System.Windows.Threading;
 using DesktopManager.Annotations;
 
 namespace DesktopManager{
-    class Viewer : INotifyPropertyChanged{
-        public Viewer(){
+    class Viewer : INotifyPropertyChanged {
+        public Viewer() {
             var ticker = new DispatcherTimer { Interval = TimeSpan.FromSeconds(SettingsOptions.RefreshTime) };
             ticker.Tick += UpdateProcess;
             ticker.Start();
         }
 
         private Process selProcess;
-        public Process SelectProcess{
+        public Process SelectProcess {
             get => selProcess;
-            set{
+            set {
                 selProcess = value;
                 OnPropertyChanged();
             }
         }
 
         public ObservableCollection<ProcessItem> ProcessItems { get; } = new ObservableCollection<ProcessItem>();
+
         private int processCount;
         public int ProcessCount
         {
@@ -35,6 +36,26 @@ namespace DesktopManager{
             set
             {
                 processCount = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private decimal GetUsedMemory()
+        {
+            Int64 phav = PerformanceInfoClass.GetPhysAvailableMemory();
+            Int64 tot = PerformanceInfoClass.GetTotalMemory();
+            decimal percentFree = ((decimal)phav / (decimal)tot) * 100;
+            decimal percentOccupied = 100 - percentFree;
+            percentOccupied = Decimal.Round(percentOccupied, 1);
+            return percentOccupied;
+        }
+
+        
+        public string UsedMemory{
+            get => GetUsedMemory().ToString() + "%";
+            set
+            {
+                UsedMemory = value;
                 OnPropertyChanged();
             }
         }
@@ -66,5 +87,7 @@ namespace DesktopManager{
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
+
+
     }
 }
