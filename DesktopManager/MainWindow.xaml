@@ -129,6 +129,14 @@
             <TextBlock Grid.Column="5" Text="{Binding ProcessCount}" VerticalAlignment="Center" FontSize="15"/>
         </Grid>
 
+        <Grid Grid.Row="3" Grid.Column="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Information" Click="Button_Click_4" Background="CornflowerBlue"/>
+            <Border BorderBrush="CadetBlue" BorderThickness="2"/>
+        </Grid>
+
         <Grid Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

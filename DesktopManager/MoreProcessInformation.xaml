@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopManager"
         mc:Ignorable="d"
-        Title="MoreProcessInformation" Height="450" Width="800">
+        Title="MoreProcessInformation" Height="768" Width="1366">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Exit" Background="White" Click="Button_Click"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="Process:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+        </Grid>
+        <TextBlock Grid.Row="1" Grid.Column="2" Name="ProcessName" Text="" VerticalAlignment="Center" FontSize="16"/>
+
     </Grid>
 </Window>

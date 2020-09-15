@@ -57,5 +57,13 @@ namespace DesktopManager{
             h.Show();
             this.Close();
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)//Information
+        {
+            var viewer = (Viewer)DataContext;
+            MoreProcessInformation information = new MoreProcessInformation(viewer.SelectProcess);
+            information.Show();
+            this.Close();
+        }
     }
 }

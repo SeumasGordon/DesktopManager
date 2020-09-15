@@ -10,11 +10,18 @@ namespace DesktopManager
     /// </summary>
     public partial class MoreProcessInformation : Window
     {
-        Process process;
+        
         public MoreProcessInformation(Process p)
         {
-            process = p;
             InitializeComponent();
+            ProcessName.Text = p.ProcessName;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }
