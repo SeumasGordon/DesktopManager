@@ -18,6 +18,11 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
@@ -33,6 +38,18 @@
             <TextBlock Text="Process:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
         </Grid>
         <TextBlock Grid.Row="1" Grid.Column="2" Name="ProcessName" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+        <TextBlock Text="Process ID:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" Name="ProcessID" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+        <TextBlock Text="Run Time:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3"/>
+        <TextBlock Grid.Row="3" Grid.Column="2" Name="RunTime" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+        <TextBlock Text="Memory:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4"/>
+        <TextBlock Grid.Row="4" Grid.Column="2" Name="Memory" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+        <TextBlock Text="User:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="5"/>
+        <TextBlock Grid.Row="5" Grid.Column="2" Name="User" Text="" VerticalAlignment="Center" FontSize="16"/>
 
     </Grid>
 </Window>

@@ -8,8 +8,10 @@ namespace DesktopManager{
         public int Id => Process.Id;// porcess name
         public string ProcessName => Process.ProcessName;//name of the process
         public string Time => GetRunningTime(Process);//how long a process has ben running
+        public string UncheckedTime => UncheckedRunningTime(Process);
         public string Memory => MemoryConvert(Process);//memory the process uses
         public string User => GetProcessOwner(Id);//user that ran the process
+        public string UncheckedUser => GetUncheckedProcessOwner(Id);
 
         public ProcessItem(Process process){
             Process = process;
@@ -20,11 +22,22 @@ namespace DesktopManager{
             AdminCheck AC = new AdminCheck();
             if (AC.IsAdmin) { 
                 if (p.Id != 0)
-                    returns = DateTime.Now.Subtract(p.StartTime).ToString(@"dd\.hh\:mm\:ss\.ff");//Time now - StartTime. ToString With format
+                    returns = DateTime.Now.Subtract(p.StartTime).ToString(@"dd\ hh\:mm\:ss\.ff");//Time now - StartTime. ToString With format
                 else
-                    returns = "00:00:00:00.00";
+                    returns = "00 00:00:00.00";
             }
             return returns;//returns the string.
+        }
+        public static string UncheckedRunningTime(Process p)
+        {
+            string returns = "00 00:00:00.00";
+            try
+            {
+                returns = DateTime.Now.Subtract(p.StartTime).ToString(@"dd\ hh\:mm\:ss\.ff");
+            }
+            catch (Exception e)
+            { }
+            return returns;
         }
         public string MemoryConvert(Process p){//Converts memory to a correct size.
             if (SettingsOptions.boolMemoryViewAuto)
@@ -84,6 +97,24 @@ namespace DesktopManager{
                 }
             }
             return "Enable in Settings";
+        }
+        public string GetUncheckedProcessOwner(int processId)
+        {
+            string query = "Select * From Win32_Process Where ProcessID = " + processId;//query for the ManagementObjectSearcher
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);//Searcher with the query
+            ManagementObjectCollection processObjects = searcher.Get();//Gets objs in the process
+
+            foreach (ManagementObject obj in processObjects)// goes through the objs
+            {
+                string[] argList = new string[] { string.Empty, string.Empty };
+                int returnVal = Convert.ToInt32(obj.InvokeMethod("GetOwner", argList));
+                if (returnVal == 0)
+                {
+                    // return DOMAIN\user
+                    return argList[1] + "\\" + argList[0];
+                }
+            }
+            return "Run as Administrator";
         }
     }
 }

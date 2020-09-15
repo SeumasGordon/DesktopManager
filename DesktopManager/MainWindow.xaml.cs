@@ -34,7 +34,10 @@ namespace DesktopManager{
 
         private void Button_Click(object sender, RoutedEventArgs e){//kill process
             var viewer = (Viewer)DataContext;
-            viewer.KillProcess();
+            if (viewer.SelectProcess != null)
+            {
+                viewer.KillProcess();
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)//settings
@@ -61,9 +64,12 @@ namespace DesktopManager{
         private void Button_Click_4(object sender, RoutedEventArgs e)//Information
         {
             var viewer = (Viewer)DataContext;
-            MoreProcessInformation information = new MoreProcessInformation(viewer.SelectProcess);
-            information.Show();
-            this.Close();
+            if (viewer.SelectProcess != null)
+            {
+                MoreProcessInformation information = new MoreProcessInformation(viewer.SelectProcess);
+                information.Show();
+                this.Close();
+            }
         }
     }
 }
