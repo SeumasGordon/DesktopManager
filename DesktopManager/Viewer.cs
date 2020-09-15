@@ -28,11 +28,23 @@ namespace DesktopManager{
         }
 
         public ObservableCollection<ProcessItem> ProcessItems { get; } = new ObservableCollection<ProcessItem>();
+        private int processCount;
+        public int ProcessCount
+        {
+            get => processCount;
+            set
+            {
+                processCount = value;
+                OnPropertyChanged();
+            }
+        }
 
         public void UpdateProcess(object sender, EventArgs e){
             var currentIds = ProcessItems.Select(processes => processes.Id).ToList();
+            var processlist = Process.GetProcesses();
+            ProcessCount = processlist.Length;
 
-            foreach (var p in Process.GetProcesses()){
+            foreach (var p in processlist){
                 if (!currentIds.Remove(p.Id))
                     ProcessItems.Add(new ProcessItem(p));
             }

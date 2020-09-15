@@ -60,6 +60,9 @@
     <Compile Include="Help.xaml.cs">
       <DependentUpon>Help.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MoreProcessInformation.xaml.cs">
+      <DependentUpon>MoreProcessInformation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PlaceHolderWindow.xaml.cs">
       <DependentUpon>PlaceHolderWindow.xaml</DependentUpon>
     </Compile>
@@ -84,6 +87,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MoreProcessInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PlaceHolderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

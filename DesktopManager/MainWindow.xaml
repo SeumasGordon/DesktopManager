@@ -114,13 +114,19 @@
         </ListBox>
         <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="25*" />
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="CPU Usage: XX%" VerticalAlignment="Center" FontSize="15"/>
-            <TextBlock Grid.Column="1" Text="Memory Usage: XX%" VerticalAlignment="Center" FontSize="15"/>
-            <TextBlock Grid.Column="2" Text="# of Processes: XXX" VerticalAlignment="Center" FontSize="15"/>
+            <TextBlock Grid.Column="0" Text="CPU Usage:" VerticalAlignment="Center" FontSize="15"/>
+            <TextBlock Grid.Column="1" Text="XX%" VerticalAlignment="Center" FontSize="15"/>
+            <TextBlock Grid.Column="2" Text="Memory Usage:" VerticalAlignment="Center" FontSize="15"/>
+            <TextBlock Grid.Column="3" Text="XX%" VerticalAlignment="Center" FontSize="15"/>
+            <TextBlock Grid.Column="4" Text="# of Processes: " VerticalAlignment="Center" FontSize="15"/>
+            <TextBlock Grid.Column="5" Text="{Binding ProcessCount}" VerticalAlignment="Center" FontSize="15"/>
         </Grid>
 
         <Grid Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2">
