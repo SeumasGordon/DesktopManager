@@ -37,8 +37,6 @@ namespace DesktopManager
             }
             catch (Exception)
             {
-                InsuffencentPermission ip = new InsuffencentPermission();
-                ip.Show();
             }
 
             MainWindow mainWindow = new MainWindow();
