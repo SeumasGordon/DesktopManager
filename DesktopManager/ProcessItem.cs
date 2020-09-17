@@ -12,6 +12,7 @@ namespace DesktopManager{
         public string Memory => MemoryConvert(Process);//memory the process uses
         public string User => GetProcessOwner(Id);//user that ran the process
         public string UncheckedUser => GetUncheckedProcessOwner(Id);
+        public int Priority => Process.BasePriority;
 
         public ProcessItem(Process process){
             Process = process;

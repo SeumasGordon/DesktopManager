@@ -51,5 +51,9 @@
         <TextBlock Text="User:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="5"/>
         <TextBlock Grid.Row="5" Grid.Column="2" Name="User" Text="" VerticalAlignment="Center" FontSize="16"/>
 
+        <TextBlock Text="Priority:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="6"/>
+        <ComboBox Name="PriorityCombo" Grid.Row="6" Grid.Column="2" Width="120" Height="24" HorizontalAlignment="Left"/>
+
+
     </Grid>
 </Window>

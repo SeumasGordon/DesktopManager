@@ -80,6 +80,7 @@ namespace DesktopManager{
             SelectProcess.Kill();
         }
 
+
         #region EventHandler
         public event PropertyChangedEventHandler PropertyChanged;
         [NotifyPropertyChangedInvocator]

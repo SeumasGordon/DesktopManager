@@ -22,6 +22,7 @@ namespace DesktopManager
         public Help()
         {
             InitializeComponent();
+            Version.Text = "9.20.17A";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)//Settings
