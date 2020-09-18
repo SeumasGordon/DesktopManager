@@ -7,69 +7,79 @@
         mc:Ignorable="d"
         Title="MoreProcessInformation" Height="768" Width="1366">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
             <RowDefinition/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.ColumnSpan="2">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button Content="Exit" Background="White" Click="Button_Click"/>
         </Grid>
-        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="11">
-            
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4">
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Process:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Name="ProcessName" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+                <TextBlock Text="Process ID:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Name="ProcessID" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+                <TextBlock Text="Run Time:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Name="RunTime" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+                <TextBlock Text="Start Time:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Name="processStartTime" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+                <TextBlock Text="Memory:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4"/>
+                <TextBlock Grid.Row="4" Grid.Column="2" Name="Memory" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+                <TextBlock Text="NonPaged:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="5"/>
+                <TextBlock Grid.Row="5" Grid.Column="2" Name="NonPageMemory" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+                <TextBlock Text="Virtual:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="6"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Name="VirtualMemory" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+                <TextBlock Text="User:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="7"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Name="User" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+                <TextBlock Text="Priority:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="8"/>
+                <ComboBox Name="PriorityCombo" Grid.Row="8" Grid.Column="2" Width="120" Height="24" HorizontalAlignment="Left"/>
+
+                <TextBlock Text="Threads:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="9"/>
+                <TextBlock Grid.Row="9" Grid.Column="2" Name="Threads" Text="" VerticalAlignment="Center" FontSize="16"/>
+            </Grid>
         </ScrollViewer>
-        <Grid Grid.Row="1" Grid.Column="1">
-            <TextBlock Text="Process:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
-        </Grid>
-        <TextBlock Grid.Row="1" Grid.Column="2" Name="ProcessName" Text="" VerticalAlignment="Center" FontSize="16"/>
-
-        <TextBlock Text="Process ID:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
-        <TextBlock Grid.Row="2" Grid.Column="2" Name="ProcessID" Text="" VerticalAlignment="Center" FontSize="16"/>
-
-        <TextBlock Text="Run Time:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3"/>
-        <TextBlock Grid.Row="3" Grid.Column="2" Name="RunTime" Text="" VerticalAlignment="Center" FontSize="16"/>
-
-        <TextBlock Text="Start Time:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4"/>
-        <TextBlock Grid.Row="4" Grid.Column="2" Name="processStartTime" Text="" VerticalAlignment="Center" FontSize="16"/>
-
-        <TextBlock Text="Memory:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="5"/>
-        <TextBlock Grid.Row="5" Grid.Column="2" Name="Memory" Text="" VerticalAlignment="Center" FontSize="16"/>
-
-        <TextBlock Text="NonPaged:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="6"/>
-        <TextBlock Grid.Row="6" Grid.Column="2" Name="NonPageMemory" Text="" VerticalAlignment="Center" FontSize="16"/>
-
-        <TextBlock Text="Virtual:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="7"/>
-        <TextBlock Grid.Row="7" Grid.Column="2" Name="VirtualMemory" Text="" VerticalAlignment="Center" FontSize="16"/>
-
-        <TextBlock Text="User:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="8"/>
-        <TextBlock Grid.Row="8" Grid.Column="2" Name="User" Text="" VerticalAlignment="Center" FontSize="16"/>
-
-        <TextBlock Text="Priority:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="9"/>
-        <ComboBox Name="PriorityCombo" Grid.Row="9" Grid.Column="2" Width="120" Height="24" HorizontalAlignment="Left"/>
-
-        <TextBlock Text="Threads:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="10"/>
-        <TextBlock Grid.Row="10" Grid.Column="2" Name="Threads" Text="" VerticalAlignment="Center" FontSize="16"/>
-
+        
+        
     </Grid>
 </Window>
