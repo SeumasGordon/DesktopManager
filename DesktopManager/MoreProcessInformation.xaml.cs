@@ -19,10 +19,28 @@ namespace DesktopManager
             ProcessName.Text = processItem.ProcessName;
             ProcessID.Text = processItem.Id.ToString();
             RunTime.Text = processItem.UncheckedTime;
+            processStartTime.Text = TryGetStartTime();
             Memory.Text = processItem.Memory;
+            NonPageMemory.Text = pro.NonpagedSystemMemorySize64.ToString();
+            VirtualMemory.Text = pro.VirtualMemorySize64.ToString();
             User.Text = processItem.UncheckedUser;
             PriorityCombo.ItemsSource = Enum.GetValues(typeof(ProcessPriorityClass)).Cast<ProcessPriorityClass>();
             PriorityCombo.SelectedIndex = 0;
+            Threads.Text = pro.Threads.Count.ToString();
+
+        }
+
+        private string TryGetStartTime()
+        {
+            string r = "";
+            try
+            {
+                r = pro.StartTime.ToString();
+            }
+            catch (Exception)
+            {
+            }
+            return r;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)//exit

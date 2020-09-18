@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Threading;
 using DesktopManager.Annotations;
 
@@ -79,7 +80,6 @@ namespace DesktopManager{
         public void KillProcess(){//Kill a process
             SelectProcess.Kill();
         }
-
 
         #region EventHandler
         public event PropertyChangedEventHandler PropertyChanged;
