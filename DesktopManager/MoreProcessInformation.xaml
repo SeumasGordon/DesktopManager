@@ -26,11 +26,10 @@
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20"/>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="180"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
@@ -77,6 +76,21 @@
 
                 <TextBlock Text="Threads:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="9"/>
                 <TextBlock Grid.Row="9" Grid.Column="2" Name="Threads" Text="" VerticalAlignment="Center" FontSize="16"/>
+
+                <TextBlock Text="Handles:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="10"/>
+                <TextBlock Text="" Name="HandleNum" VerticalAlignment="Center" FontSize="16" Grid.Row="10" Grid.Column="2"/>
+
+                <TextBlock Text="Main Handle:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="11"/>
+                <TextBlock Text="" Name="HandleMain" VerticalAlignment="Center" FontSize="16" Grid.Row="11" Grid.Column="2"/>
+
+                <TextBlock Text="File Name:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="12"/>
+                <TextBlock Text="" Name="FileName" VerticalAlignment="Center" FontSize="16" Grid.Row="12" Grid.Column="2"/>
+
+                <TextBlock Text="File Dir:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="13"/>
+                <TextBlock Text="" Name="FileDir" VerticalAlignment="Center" FontSize="16" Grid.Row="13" Grid.Column="2"/>
+
+                <TextBlock Text="Session ID:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="14"/>
+                <TextBlock Text="" Name="SessionID" VerticalAlignment="Center" FontSize="16" Grid.Row="14" Grid.Column="2"/>
             </Grid>
         </ScrollViewer>
         

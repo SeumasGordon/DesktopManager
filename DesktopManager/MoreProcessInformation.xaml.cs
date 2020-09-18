@@ -27,12 +27,29 @@ namespace DesktopManager
             PriorityCombo.ItemsSource = Enum.GetValues(typeof(ProcessPriorityClass)).Cast<ProcessPriorityClass>();
             PriorityCombo.SelectedIndex = 0;
             Threads.Text = pro.Threads.Count.ToString();
+            HandleNum.Text = pro.HandleCount.ToString();
+            HandleMain.Text = tryMainHandle();
+            FileName.Text = pro.StartInfo.FileName;
+            FileDir.Text = pro.StartInfo.WorkingDirectory;
+            SessionID.Text = pro.SessionId.ToString();
+        }
 
+        private string tryMainHandle()
+        {
+            string s = "Run as Administrator";
+            try
+            {
+                s = pro.Handle.ToString();
+            }
+            catch (Exception)
+            {
+            }
+            return s;
         }
 
         private string TryGetStartTime()
         {
-            string r = "";
+            string r = "Run as Administrator";
             try
             {
                 r = pro.StartTime.ToString();
