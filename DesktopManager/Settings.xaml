@@ -36,9 +36,8 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Button Content="Exit" Grid.Column="0" Click="Button_Click_2" Background="White"/>
-            <Button Content="View" Grid.Column="1" Click="Button_Click_1" Background="White"/>
-            <Button Content="Settings" Grid.Column="2" Background="White" IsEnabled="False"/>
-            <Button Content="Help" Grid.Column="3" Click="Button_Click" Background="White"/>
+            <Button Content="Settings" Grid.Column="1" Background="White" IsEnabled="False"/>
+            <Button Content="Help" Grid.Column="2" Click="Button_Click" Background="White"/>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1">
             <TextBlock Text="View" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>

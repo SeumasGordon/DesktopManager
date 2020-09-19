@@ -47,13 +47,6 @@ namespace DesktopManager{
             this.Close();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)//view
-        {
-            PlaceHolderWindow PHW = new PlaceHolderWindow();//Place holder window
-            PHW.Show();
-            this.Close();
-        }
-
         private void Button_Click_3(object sender, RoutedEventArgs e)//help
         {
             Help h = new Help();

@@ -23,7 +23,7 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-        <Grid Height="20" DockPanel.Dock="Top" Grid.ColumnSpan="2">
+        <Grid Height="20" DockPanel.Dock="Top" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75"/>
                 <ColumnDefinition Width="75"/>
@@ -32,9 +32,9 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Button Content="Exit" Grid.Column="0" Click="Button_Click_2" Background="White"/>
-            <Button Content="View" Grid.Column="1" Click="Button_Click_1" Background="White"/>
-            <Button Content="Settings" Grid.Column="2" Click="Button_Click" Background="White"/>
-            <Button Content="Help" Grid.Column="3" IsEnabled="False" Background="White"/>
+            <Button Content="Settings" Grid.Column="1" Click="Button_Click" Background="White"/>
+            <Button Content="Help" Grid.Column="2" IsEnabled="False" Background="White"/>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="5"/>
         </Grid>
         <TextBlock Text="About:" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" Margin="50,0" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"/>
         <TextBlock Text="Version:" FontSize="12" VerticalAlignment="Center" Margin="50,0" Grid.Column="0" Grid.Row="2"/>

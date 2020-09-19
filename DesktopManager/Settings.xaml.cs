@@ -31,13 +31,6 @@ namespace DesktopManager
             this.Close();//closes this window
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)//View
-        {
-            PlaceHolderWindow PHW = new PlaceHolderWindow();//Place Holder Window
-            PHW.Show();
-            this.Close();//closes this window
-        }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)//Exit
         {
             MainWindow mw = new MainWindow();//creates new main window
