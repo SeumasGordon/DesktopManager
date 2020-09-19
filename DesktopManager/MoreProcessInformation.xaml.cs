@@ -62,6 +62,24 @@ namespace DesktopManager
 
         private void Button_Click(object sender, RoutedEventArgs e)//exit
         {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)//Close
+        {
+            if (!pro.HasExited)//If process has not been exited
+            {
+                pro.Kill();//kills process
+            }
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)//Save
+        {
             ProcessPriorityClass priorityClass = (ProcessPriorityClass)PriorityCombo.SelectionBoxItem;
             try
             {

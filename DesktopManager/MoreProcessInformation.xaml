@@ -93,7 +93,15 @@
                 <TextBlock Text="" Name="SessionID" VerticalAlignment="Center" FontSize="16" Grid.Row="14" Grid.Column="2"/>
             </Grid>
         </ScrollViewer>
-        
-        
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Close" FontSize="16" Background="Red" BorderBrush="DarkRed" BorderThickness="2" Click="Button_Click_1"/>
+            <Button Content="Save" FontSize="16" Grid.Column="1" Background="ForestGreen" BorderThickness="2" Click="Button_Click_2"/>
+        </Grid>
+
     </Grid>
 </Window>
