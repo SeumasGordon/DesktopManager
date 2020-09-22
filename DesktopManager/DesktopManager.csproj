@@ -86,6 +86,9 @@
     </ApplicationDefinition>
     <Compile Include="AdminCheck.cs" />
     <Compile Include="DriveItem.cs" />
+    <Compile Include="DriveWindow.xaml.cs">
+      <DependentUpon>DriveWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Help.xaml.cs">
       <DependentUpon>Help.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
     </Compile>
     <Compile Include="SettingsOptions.cs" />
     <Compile Include="Viewer.cs" />
+    <Page Include="DriveWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Help.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
