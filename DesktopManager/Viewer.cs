@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -29,6 +30,16 @@ namespace DesktopManager{
         }
 
         public ObservableCollection<ProcessItem> ProcessItems { get; } = new ObservableCollection<ProcessItem>();
+
+        private DriveInfo driveInfo;
+        public DriveInfo DriveInfo {
+            get => driveInfo;
+            set {
+                driveInfo = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         private int processCount;
         public int ProcessCount
