@@ -44,5 +44,10 @@ namespace DesktopManager
             help.Show();
             this.Close();
         }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

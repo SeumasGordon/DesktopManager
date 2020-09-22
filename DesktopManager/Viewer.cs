@@ -17,8 +17,10 @@ namespace DesktopManager{
         public Viewer() {
             var ticker = new DispatcherTimer { Interval = TimeSpan.FromSeconds(SettingsOptions.RefreshTime) };
             ticker.Tick += UpdateProcess;
+            ticker.Tick += UpdateDrive;
             ticker.Start();
         }
+
 
         private Process selProcess;
         public Process SelectProcess {
@@ -40,6 +42,7 @@ namespace DesktopManager{
             }
         }
 
+        public ObservableCollection<DriveItem> DriveItems { get; } = new ObservableCollection<DriveItem>();
 
         private int processCount;
         public int ProcessCount
@@ -85,6 +88,27 @@ namespace DesktopManager{
             foreach (var id in currentIds){
                 var process = ProcessItems.First(p => p.Id == id);
                 ProcessItems.Remove(process);
+            }
+        }
+
+        private void UpdateDrive(object sender, EventArgs e)
+        {
+            var currentLabel = DriveItems.Select(drives => drives.DriveLabel).ToList();
+            var drivelist = DriveInfo.GetDrives();
+
+            foreach (var item in drivelist)
+            {
+                if (item.IsReady)
+                {
+                    if (!currentLabel.Remove(item.VolumeLabel))
+                        DriveItems.Add(new DriveItem(item));
+                }
+            }
+
+            foreach (var item in currentLabel)
+            {
+                var drive = DriveItems.First(d => d.DriveLabel == item);
+                DriveItems.Remove(drive);
             }
         }
 

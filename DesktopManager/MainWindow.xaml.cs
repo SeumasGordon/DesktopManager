@@ -64,5 +64,12 @@ namespace DesktopManager{
                 this.Close();
             }
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            DriveWindow driveWindow = new DriveWindow();
+            driveWindow.Show();
+            this.Close();
+        }
     }
 }

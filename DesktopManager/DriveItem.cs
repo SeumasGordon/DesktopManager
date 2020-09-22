@@ -11,9 +11,10 @@ namespace DesktopManager
     {
         public DriveInfo drive { get; }
         public string DriveSpace => GetDriveSpaceAuto();
-        public string DriveTotalSpace => drive.TotalSize.ToString();
+        public string DriveTotalSpace => GetDriveTotalSpaceAuto();
         public string DriveName => drive.Name;
         public string DriveFormat => drive.DriveFormat;
+        public string DriveLabel => drive.VolumeLabel;
 
         public DriveItem(DriveInfo di){
             drive = di;
