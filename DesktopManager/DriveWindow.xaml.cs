@@ -26,8 +26,6 @@ namespace DesktopManager
 
         private void Button_Click(object sender, RoutedEventArgs e)//Close
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
             this.Close();
         }
 

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopManager"
         mc:Ignorable="d"
-        Title="Process Manager - Help" Height="768" Width="1366">
+        Title="Process Manager - Help" Height="768" Width="1366"
+        Icon="System-Task-Manager.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
