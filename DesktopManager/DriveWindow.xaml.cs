@@ -24,24 +24,10 @@ namespace DesktopManager
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)//Home
+        private void Button_Click(object sender, RoutedEventArgs e)//Close
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            this.Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)//Settings
-        {
-            Settings settings = new Settings();
-            settings.Show();
-            this.Close();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)//Help
-        {
-            Help help = new Help();
-            help.Show();
             this.Close();
         }
 
